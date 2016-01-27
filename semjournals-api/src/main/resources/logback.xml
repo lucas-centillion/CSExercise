@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<configuration>
+
+	<jmxConfigurator />
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/semjournals-api.log</file>
+		<encoder>
+			<pattern>%d{ISO8601} [%thread][%-5level][%X{trackingId}][%logger{0}] - %msg%n</pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<FileNamePattern>logs/semjournals-api.log.%i</FileNamePattern>
+			<MinIndex>1</MinIndex>
+			<MaxIndex>10</MaxIndex>
+		</rollingPolicy>
+
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>50MB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+
+	<logger name="com.semjournals" level="debug" additivity="false">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="org.apache.shiro" level="debug" additivity="false">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="io.swagger" level="info" additivity="false">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="log4j.logger.org.apache" level="warn" additivity="false">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="log4j.logger.httpclient" level="warn" additivity="false">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<root level="error">
+		<appender-ref ref="FILE" />
+	</root>
+
+</configuration>

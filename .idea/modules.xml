@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/semjournals.iml" filepath="$PROJECT_DIR$/semjournals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/semjournals-api/semjournals-api.iml" filepath="$PROJECT_DIR$/semjournals-api/semjournals-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/semjournals-data/semjournals-data.iml" filepath="$PROJECT_DIR$/semjournals-data/semjournals-data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/semjournals-model/semjournals-model.iml" filepath="$PROJECT_DIR$/semjournals-model/semjournals-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/semjournals-service/semjournals-service.iml" filepath="$PROJECT_DIR$/semjournals-service/semjournals-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/semjournals-web/semjournals-web.iml" filepath="$PROJECT_DIR$/semjournals-web/semjournals-web.iml" />
+    </modules>
+  </component>
+</project>
