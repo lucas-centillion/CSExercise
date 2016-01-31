@@ -56,11 +56,12 @@ public class AccountService {
         return accountDAO.get(createAccount.getId());
     }
 
-    public Account update(Account currentAccount, AccountAdapter accountAdapter) {
-        checkNotNull(currentAccount);
-        checkNotNull(currentAccount.getId());
+    public Account update(AccountAdapter accountAdapter) {
         checkNotNull(accountAdapter);
         checkNotNull(accountAdapter.getId());
+
+        AccountDAO accountDAO = new AccountDAO();
+        Account currentAccount = accountDAO.get(accountAdapter.getId());
 
         Account updateAccount = accountAdapter.fromAdapter();
         updateAccount.setPassword(currentAccount.getPassword());
@@ -75,8 +76,8 @@ public class AccountService {
         if (updateAccount.getEmail() == null) {
             updateAccount.setEmail(currentAccount.getEmail());
         }
+        updateAccount.setActive(currentAccount.isActive());
 
-        AccountDAO accountDAO = new AccountDAO();
         accountDAO.update(updateAccount);
         return accountDAO.get(accountAdapter.getId());
     }

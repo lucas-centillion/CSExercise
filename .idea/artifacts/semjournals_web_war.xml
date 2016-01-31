@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="semjournals-web:war">
+    <output-path>$PROJECT_DIR$/semjournals-web/target</output-path>
+    <root id="archive" name="semjournals-web-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="semjournals-web:war exploded" />
+    </root>
+  </artifact>
+</component>

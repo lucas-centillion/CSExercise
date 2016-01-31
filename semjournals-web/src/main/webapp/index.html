@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+    <title>SEMJournal</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1" />
+
+  <!-- STYLESHEETS -->
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.css"/>
+  <link rel="stylesheet" href="app-content/app.css"/>
+
+  <!-- SCRIPTS -->
+  <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.js"></script>
+
+  <!-- MY SCRIPTS -->
+    <script src="app.js"></script>
+
+    <script src="app-services/authentication.service.js"></script>
+    <script src="app-services/flash.service.js"></script>
+    <script src="app-services/sidebar.service.js"></script>
+    <script src="app-services/user.service.js"></script>
+    <script src="app-services/journal.service.js"></script>
+
+    <script src="login/login.controller.js"></script>
+    <script src="sidebar/sidebar.controller.js"></script>
+    <script src="users/users.controller.js"></script>
+    <script src="journals/journals.controller.js"></script>
+
+</head>
+<body ng-app="semjournals" layout="column" ng-controller="SidebarController as sidebar">
+
+    <md-toolbar layout="row">
+        <h3>SEMJournals</h3>
+        <md-button class="menu" aria-label="Show menu" hide-gt-sm ng-click="sidebar.toggleMenu()">
+            <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
+    </md-toolbar>
+
+    <div flex layout="row">
+        <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="actionsMenu" ng-click="sidebar.toggleMenu()" class="sidenav md-whiteframe-4dp">
+            <md-list>
+                <md-list-item layout="column" ng-repeat="action in sidebar.actions">
+                    <md-button ng-class="selected" ng-click="sidebar.selectAction(action)">{{action.name}}</md-button>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+
+        <md-content flex ng-view></md-content>
+    </div>
+</body>
+</html>

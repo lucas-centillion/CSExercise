@@ -1,0 +1,39 @@
+<md-content class="md-has-header">
+    <md-subheader>Users</md-subheader>
+
+    <md-list>
+        <md-card ng-repeat="user in vm.allUsers | orderBy:'fullname'" >
+            <md-list-item class="list-row zebra-background" layout="row" layout-align="space-between center">
+                <md-content>
+                    <md-icon md-svg-icon="svg-{{user.iconId}}" class="avatar"></md-icon>
+                    <h2>{{user.fullname}}</h2>
+                    <p>{{user.email}}</p>
+                </md-content>
+                <md-list>
+                    <md-list-item layout="column" layout-align="center start">
+                        <md-content>
+                            <md-button aria-label="toggle activation" ng-click="vm.toggleActivation(user)">
+                                <md-icon md-svg-icon="share"></md-icon>
+                                <span ng-if="!user.active">Activate User</span>
+                                <span ng-if="user.active">Deactivate User</span>
+                            </md-button>
+                        </md-content>
+                        <md-content>
+                            <md-button aria-label="toggle admin role" ng-click="vm.toggleAdminRole(user)">
+                                <md-icon md-svg-icon="share"></md-icon>
+                                <span ng-if="user.role.name == 'user'">Grant Admin role</span>
+                                <span ng-if="user.role.name == 'admin'">Revoke Admin role</span>
+                            </md-button>
+                        </md-content>
+                        <md-content>
+                            <md-button ng-click="vm.deleteUser(user)">
+                                <md-icon md-svg-icon="share"></md-icon>
+                                Delete User
+                            </md-button>
+                        </md-content>
+                    </md-list-item>
+                </md-list>
+            </md-list-item>
+        </md-card>
+    </md-list>
+</md-content>

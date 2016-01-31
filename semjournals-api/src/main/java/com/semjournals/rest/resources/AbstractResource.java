@@ -1,5 +1,7 @@
 package com.semjournals.rest.resources;
 
+import com.semjournals.rest.util.UserUtil;
+
 import javax.ws.rs.core.CacheControl;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -12,6 +14,7 @@ import java.net.URI;
  * follow the same pattern throughout the API.
  */
 public abstract class AbstractResource {
+    protected UserUtil userUtil = new UserUtil();
 
     protected Response ok() {
         return Response.ok().cacheControl(CacheControl.valueOf("no-cache")).build();

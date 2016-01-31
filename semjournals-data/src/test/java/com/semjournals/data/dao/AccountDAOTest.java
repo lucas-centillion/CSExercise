@@ -89,9 +89,7 @@ public class AccountDAOTest {
     @Test(expected = NonUniqueResultException.class)
     public void testGet_usingCommonProperties() throws Exception {
         DAO<Account> dao = new AccountDAO();
-        Account account = dao.get("active", true);
-
-        validateDefaultAccount(account);
+        dao.get("active", true);
     }
 
     @Test
@@ -157,7 +155,7 @@ public class AccountDAOTest {
     @Test
     public void testUpdate() throws Exception {
         Account account = createAccount(true);
-        String fullname = account.getFullname();
+        String originalName = account.getFullname();
 
         DAO<Account> dao = new AccountDAO();
         Account savedAccount = dao.create(account);
@@ -165,15 +163,22 @@ public class AccountDAOTest {
         account = dao.get(savedAccount.getId());
         assertNotNull(account);
         assertNotNull(account.getFullname());
-        assert(account.getFullname().equalsIgnoreCase(fullname));
+        assert(account.getFullname().equalsIgnoreCase(originalName));
 
-        fullname = "Updated_" + fullname;
-        account.setFullname(fullname);
+        String updatedName = "Updated_" + originalName;
+        account.setFullname(updatedName);
         dao.update(account);
 
         assertNotNull(account);
         assertNotNull(account.getFullname());
-        assert(account.getFullname().equalsIgnoreCase(fullname));
+        assert(account.getFullname().equalsIgnoreCase(updatedName));
+
+        account.setFullname(originalName);
+        dao.update(account);
+
+        assertNotNull(account);
+        assertNotNull(account.getFullname());
+        assert(account.getFullname().equalsIgnoreCase(originalName));
     }
 
     @Test(expected = NullPointerException.class)
@@ -189,6 +194,7 @@ public class AccountDAOTest {
         DAO<Account> dao = new AccountDAO();
         dao.update(account);
     }
+
     private Account createAccount(boolean withRole) {
         String time = String.valueOf(System.currentTimeMillis());
 
@@ -211,8 +217,8 @@ public class AccountDAOTest {
 
     private void validateDefaultAccount(Account account) {
         // Data inserted automatically by flyway. Inserts located at 'src\main\resources\db\migration\V2__Insert_test_role_user.sql'
-        String roleId = "ea9d4ac3-b5f4-4416-9542-ab8e396510d7";
-        String roleName = "user";
+        String roleId = "c582671f-0abe-4165-acb0-851d73954156";
+        String roleName = "admin";
         String fullname = "Mario";
         String email = "mario@gmail.com";
         String password = "5a3f8f09e2310f6f81499150ad93d6df06976638f70ebb5334f3a1ff8a800c2c57521859e932544fd5ae3fe6f5b3fffc46bb8f693474c25b6e4ed1a89a2810d0";

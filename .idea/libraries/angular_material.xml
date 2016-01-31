@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="angular-material" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_ajax.googleapis.com_ajax_libs_angular_material_1.0.0_angular-material.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_ajax.googleapis.com_ajax_libs_angular_material_1.0.0_angular-material.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

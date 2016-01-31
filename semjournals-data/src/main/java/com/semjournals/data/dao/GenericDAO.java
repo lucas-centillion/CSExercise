@@ -77,18 +77,44 @@ public class GenericDAO<T extends AbstractPersistentObject> implements DAO<T> {
 
     @Override
     public List<T> list() {
+        return list(false);
+    }
+
+    public List<T> listActive() {
+        return list(true);
+    }
+
+    private List<T> list(boolean showActiveOnly) {
         Session session = HibernateUtil.getCurrentSession();
         Criteria criteria = session.createCriteria(type);
+
+        if (showActiveOnly){
+            criteria.add(Restrictions.eq("active", true));
+        }
+
         return criteria.list();
     }
 
     @Override
     public List<T> list(int offset, int maxSize) {
+        return list(offset, maxSize, false);
+    }
+
+    public List<T> listActive(int offset, int maxSize) {
+        return list(offset, maxSize, true);
+    }
+
+    private List<T> list(int offset, int maxSize, boolean active) {
         checkArgument(offset >= 0);
         checkArgument(maxSize > 0);
 
         Session session = HibernateUtil.getCurrentSession();
         Criteria criteria = session.createCriteria(type).setFirstResult(offset).setMaxResults(maxSize);
+
+        if (active){
+            criteria.add(Restrictions.eq("active", true));
+        }
+
         return criteria.list();
     }
 

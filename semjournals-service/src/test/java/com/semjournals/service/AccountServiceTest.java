@@ -101,39 +101,35 @@ public class AccountServiceTest {
 
     @Test
     public void testUpdate() throws Exception {
-        Account account = new AccountDAO().get("email","luigi@gmail.com");
+        String originalName = "Luigi";
+        Account account = new AccountDAO().get("fullname",originalName);
         assertNotNull(account);
 
         String updatedFullname = "Update Test";
         AccountAdapter updateAccountAdapter = new AccountAdapter(account);
         updateAccountAdapter.setFullname(updatedFullname);
 
-        Account updatedAccount = new AccountService().update(account, updateAccountAdapter);
+        Account updatedAccount = new AccountService().update(updateAccountAdapter);
         assertNotNull(updatedAccount);
         assertNotNull(updatedAccount.getEmail());
         assertEquals(updatedFullname, updatedAccount.getFullname());
+
+        updateAccountAdapter.setFullname(originalName);
+
+        updatedAccount = new AccountService().update(updateAccountAdapter);
+        assertNotNull(updatedAccount);
+        assertNotNull(updatedAccount.getEmail());
+        assertEquals(originalName, updatedAccount.getFullname());
     }
 
     @Test(expected = NullPointerException.class)
     public void testUpdate_nullObject() throws Exception {
-        new AccountService().update(null, new AccountAdapter(new Account()));
-    }
-
-    @Test(expected = NullPointerException.class)
-    public void testUpdate_nullAdapter() throws Exception {
-        new AccountService().update(new Account(), null);
+        new AccountService().update(null);
     }
 
     @Test(expected = NullPointerException.class)
     public void testUpdate_emptyObject() throws Exception {
-        new AccountService().update(new Account(), new AccountAdapter(new Account()));
-    }
-
-    @Test(expected = NullPointerException.class)
-    public void testUpdate_emptyAdapter() throws Exception {
-        Account account = new Account();
-        account.setId("");
-        new AccountService().update(account, new AccountAdapter(new Account()));
+        new AccountService().update(new AccountAdapter(new Account()));
     }
 
     @Test
@@ -183,8 +179,8 @@ public class AccountServiceTest {
 
     private void validateDefaultAccount(Account account) {
         // Data inserted automatically by flyway. Inserts located at 'src\main\resources\db\migration\V2__Insert_test_role_user.sql'
-        String roleId = "ea9d4ac3-b5f4-4416-9542-ab8e396510d7";
-        String roleName = "user";
+        String roleId = "c582671f-0abe-4165-acb0-851d73954156";
+        String roleName = "admin";
         String fullname = "Mario";
         String email = "mario@gmail.com";
         String password = "5a3f8f09e2310f6f81499150ad93d6df06976638f70ebb5334f3a1ff8a800c2c57521859e932544fd5ae3fe6f5b3fffc46bb8f693474c25b6e4ed1a89a2810d0";

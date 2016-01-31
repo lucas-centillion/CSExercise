@@ -6,12 +6,11 @@
         <datasource-map>
           <unit-entry name="hibernate.cfg.xml" value="800863ba-8f43-44d8-97fc-8425afdacfda" />
         </datasource-map>
-        <naming-strategy-map />
+        <naming-strategy-map>
+          <unit-entry name="hibernate.cfg.xml" />
+        </naming-strategy-map>
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
       </configuration>
-    </facet>
-    <facet type="AspectJ" name="AspectJ">
-      <configuration />
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="false">

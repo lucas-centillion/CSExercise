@@ -23,7 +23,7 @@ public class AccountsResource extends AbstractResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response listAccounts() {
-        if (!isCurrentUserAdmin()) {
+        if (!userUtil.isCurrentUserAdmin()) {
             return status(Response.Status.FORBIDDEN);
         }
 
@@ -42,7 +42,7 @@ public class AccountsResource extends AbstractResource {
     @Path("/{accountId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAccountById(final @PathParam("accountId") String accountId) {
-        if (!isCurrentUserAdmin() && !accountId.equals(getCurrentAccount().getId())) {
+        if (!userUtil.isCurrentUserAdmin() && !accountId.equals(userUtil.getCurrentAccount().getId())) {
             return status(Response.Status.FORBIDDEN);
         }
 
@@ -52,11 +52,23 @@ public class AccountsResource extends AbstractResource {
         return ok(gson.toJson(accountAdapter));
     }
 
+    @GET
+    @Path("/self")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getSelfAccount() {
+        Account account = userUtil.getCurrentAccount();
+
+        AccountAdapter accountAdapter = new AccountAdapter(account);
+
+        Gson gson = new Gson();
+        return ok(gson.toJson(accountAdapter));
+    }
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response createAccount(AccountAdapter createdAccountAdapter) {
-        if (!isCurrentUserAdmin()) {
+        if (!userUtil.isCurrentUserAdmin()) {
             return status(Response.Status.FORBIDDEN);
         }
 
@@ -76,12 +88,12 @@ public class AccountsResource extends AbstractResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateAccount(final @PathParam("accountId") String accountId, AccountAdapter updateAccountAdapter) {
-        if (!isCurrentUserAdmin() && !accountId.equals(getCurrentAccount().getId())) {
+        if (!userUtil.isCurrentUserAdmin() && !accountId.equals(userUtil.getCurrentAccount().getId())) {
             return status(Response.Status.FORBIDDEN);
         }
 
         updateAccountAdapter.setId(accountId);
-        AccountAdapter accountAdapter = new AccountAdapter(new AccountService().update(getCurrentAccount(), updateAccountAdapter));
+        AccountAdapter accountAdapter = new AccountAdapter(new AccountService().update(updateAccountAdapter));
 
         Gson gson = new Gson();
         return ok(gson.toJson(accountAdapter));
@@ -91,7 +103,7 @@ public class AccountsResource extends AbstractResource {
     @Path("/{accountId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteAccount(final @PathParam("accountId") String accountId) {
-        if (!isCurrentUserAdmin() && !accountId.equals(getCurrentAccount().getId())) {
+        if (!userUtil.isCurrentUserAdmin() && !accountId.equals(userUtil.getCurrentAccount().getId())) {
             return status(Response.Status.FORBIDDEN);
         }
 
@@ -105,14 +117,16 @@ public class AccountsResource extends AbstractResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response activateAccount(final @PathParam("accountId") String accountId) {
-        if (!isCurrentUserAdmin()) {
+        if (!userUtil.isCurrentUserAdmin()) {
             return status(Response.Status.FORBIDDEN);
         }
 
-        Account account = getCurrentAccount();
+        AccountService service = new AccountService();
+        Account account = service.get(accountId);
         account.setActive(true);
 
-        AccountAdapter accountAdapter = new AccountAdapter(new AccountService().update(getCurrentAccount(), new AccountAdapter(account)));
+        account = service.update(new AccountAdapter(account));
+        AccountAdapter accountAdapter = new AccountAdapter(account);
 
         Gson gson = new Gson();
         return ok(gson.toJson(accountAdapter));
@@ -122,14 +136,16 @@ public class AccountsResource extends AbstractResource {
     @Path("/{accountId}/active")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deactivateAccount(final @PathParam("accountId") String accountId) {
-        if (!isCurrentUserAdmin()) {
+        if (!userUtil.isCurrentUserAdmin()) {
             return status(Response.Status.FORBIDDEN);
         }
 
-        Account account = getCurrentAccount();
+        AccountService service = new AccountService();
+        Account account = service.get(accountId);
         account.setActive(false);
 
-        AccountAdapter accountAdapter = new AccountAdapter(new AccountService().update(getCurrentAccount(), new AccountAdapter(account)));
+        account = service.update(new AccountAdapter(account));
+        AccountAdapter accountAdapter = new AccountAdapter(account);
 
         Gson gson = new Gson();
         return ok(gson.toJson(accountAdapter));
@@ -140,17 +156,18 @@ public class AccountsResource extends AbstractResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response addAdminRole(final @PathParam("accountId") String accountId) {
-        if (!isCurrentUserAdmin()) {
+        if (!userUtil.isCurrentUserAdmin()) {
             return status(Response.Status.FORBIDDEN);
         }
 
-        AccountService service = new AccountService();
-
         Role role = new RoleDAO().get("name", "admin");
+
+        AccountService service = new AccountService();
         Account account = service.get(accountId);
         account.setRole(role);
 
-        AccountAdapter accountAdapter = new AccountAdapter(service.update(getCurrentAccount(), new AccountAdapter(account)));
+        account = service.update(new AccountAdapter(account));
+        AccountAdapter accountAdapter = new AccountAdapter(account);
 
         Gson gson = new Gson();
         return ok(gson.toJson(accountAdapter));
@@ -160,30 +177,20 @@ public class AccountsResource extends AbstractResource {
     @Path("/{accountId}/admin")
     @Produces(MediaType.APPLICATION_JSON)
     public Response removeAdminRole(final @PathParam("accountId") String accountId) {
-        if (!isCurrentUserAdmin()) {
+        if (!userUtil.isCurrentUserAdmin()) {
             return status(Response.Status.FORBIDDEN);
         }
 
-        AccountService service = new AccountService();
-
         Role role = new RoleDAO().get("name", "user");
+
+        AccountService service = new AccountService();
         Account account = service.get(accountId);
         account.setRole(role);
 
-        AccountAdapter accountAdapter = new AccountAdapter(service.update(getCurrentAccount(), new AccountAdapter(account)));
+        account = service.update(new AccountAdapter(account));
+        AccountAdapter accountAdapter = new AccountAdapter(account);
 
         Gson gson = new Gson();
         return ok(gson.toJson(accountAdapter));
-    }
-
-    private Account getCurrentAccount() {
-        Subject subject = SecurityUtils.getSubject();
-        Account account = new AccountDAO().get("email", subject.getPrincipal());
-        return account;
-    }
-
-    private boolean isCurrentUserAdmin() {
-        Subject currentUser = SecurityUtils.getSubject();
-        return (currentUser.hasRole("admin"));
     }
 }

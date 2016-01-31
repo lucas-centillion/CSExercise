@@ -1,0 +1,40 @@
+<md-content class="md-has-header">
+    <md-subheader>Journals</md-subheader>
+
+    <md-list>
+        <md-card ng-repeat="journal in vm.allJournals | orderBy:'name'" >
+            <md-list-item class="list-row zebra-background" layout="row" layout-align="space-between center">
+                <md-content>
+                    <md-icon md-svg-icon="svg-{{journal.iconId}}" class="avatar"></md-icon>
+                    <h2>{{journal.name}}</h2>
+                </md-content>
+                <md-list>
+                    <md-list-item layout="column" layout-align="center start" ng-if="vm.user.role.name == 'admin'">
+                        <md-content>
+                            <md-button aria-label="toggle activation" ng-click="vm.toggleActivation(journal)">
+                                <md-icon md-svg-icon="share"></md-icon>
+                                <span ng-if="!journal.active">Activate Journal</span>
+                                <span ng-if="journal.active">Deactivate Journal</span>
+                            </md-button>
+                        </md-content>
+                        <md-content>
+                            <md-button ng-click="vm.deleteJournal(journal)">
+                                <md-icon md-svg-icon="share"></md-icon>
+                                Delete Journal
+                            </md-button>
+                        </md-content>
+                    </md-list-item>
+                    <md-list-item layout="column" layout-align="center start" ng-if="vm.user.role.name == 'user'">
+                        <md-content>
+                            <md-button aria-label="toggle subscription" ng-click="vm.toggleSubscription(journal)">
+                                <md-icon md-svg-icon="share"></md-icon>
+                                <span ng-if="!journal.active">Subscribe</span>
+                                <span ng-if="journal.active">Unsubscribe</span>
+                            </md-button>
+                        </md-content>
+                    </md-list-item>
+                </md-list>
+            </md-list-item>
+        </md-card>
+    </md-list>
+</md-content>

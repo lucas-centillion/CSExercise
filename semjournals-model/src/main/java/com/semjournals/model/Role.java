@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 @Table( name = "role" )
 @AttributeOverride(name = "id", column = @Column(name = "id"))
-@NamedNativeQuery(name = "getRoleByName", query = "select * from role where name = :roleName", resultClass=Role.class)
 public class Role extends AbstractPersistentObject {
     private String name;
 

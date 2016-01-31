@@ -17,8 +17,9 @@ CREATE TABLE account (
 
 CREATE TABLE journal (
   id CHAR(36) NOT NULL PRIMARY KEY,
-  owner_id CHAR(36) NOT NULL,
+  creator_id CHAR(36) NOT NULL,
   name TEXT NOT NULL,
+  active BOOLEAN NOT NULL,
 
-  FOREIGN KEY (owner_id) REFERENCES account(id)
+  FOREIGN KEY (creator_id) REFERENCES account(id)
 );
