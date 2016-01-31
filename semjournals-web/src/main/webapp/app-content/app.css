@@ -54,9 +54,7 @@ md-sidenav  md-list {
 #content .list-row {
     padding: 20px;
 }
-#content .zebra-background {
-    background: #eee;
-}
+
 #content .md-button.share {
     background-color: transparent;
     border: none;

@@ -1,20 +1,24 @@
 package com.semjournals.rest.resources;
 
 import com.google.gson.Gson;
+import com.semjournals.adapter.AccountAdapter;
 import com.semjournals.adapter.JournalAdapter;
+import com.semjournals.model.Account;
 import com.semjournals.model.Journal;
+import com.semjournals.rest.util.UploadUtil;
 import com.semjournals.service.JournalService;
+import com.semjournals.service.SubscriptionService;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Path("/journals/")
 public class JournalResource extends AbstractResource {
@@ -34,6 +38,7 @@ public class JournalResource extends AbstractResource {
 
         journalList.forEach(journal -> {
             JournalAdapter journalAdapter = new JournalAdapter(journal);
+            journalAdapter.setSubscribed(checkHasSubscriber(journal, userUtil.getCurrentAccount()));
             journalAdapterList.add(journalAdapter);
         });
 
@@ -56,37 +61,34 @@ public class JournalResource extends AbstractResource {
     }
 
     @POST
-    @Path("/upload")
+    @Path("/upload/{journalName}")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStream, @FormDataParam("file") FormDataContentDisposition fileDetail) {
-//        String uploadedFileLocation = "d://uploaded/" + fileDetail.getFileName();
-//
-//        // save it
-//        writeToFile(uploadedInputStream, uploadedFileLocation);
-//
-//        String output = "File uploaded to : " + uploadedFileLocation;
-//
-//        return Response.status(200).entity(output).build();
-        return status(Response.Status.NOT_IMPLEMENTED);
-    }
-
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createJournal(JournalAdapter createdJournalAdapter) {
+    public Response uploadFile(@FormDataParam("file") InputStream uploadedInputStream,
+                               @FormDataParam("file") FormDataContentDisposition fileDetail,
+                               final @PathParam("journalName") String journalName) {
         if (!userUtil.isCurrentUserAdmin()) {
             return status(Response.Status.FORBIDDEN);
         }
 
-        JournalAdapter journalAdapter;
+        String fileName = journalName + ".pdf";
+        JournalService service = new JournalService();
+
+        String uploadedFileLocation = "journals/" + fileName;
+
+        Journal journal = new Journal(userUtil.getCurrentAccount(), journalName, true);
+        JournalAdapter journalAdapter = new JournalAdapter(journal);
+
         try {
-            journalAdapter = new JournalAdapter(new JournalService().create(createdJournalAdapter));
-        } catch (UnsupportedEncodingException e) {
+            new JournalAdapter(service.create(journalAdapter));
+            new UploadUtil().writeToFile(uploadedInputStream, uploadedFileLocation);
+        } catch (IllegalArgumentException e) {
+            return status(Response.Status.CONFLICT);
+        } catch (Exception e) {
             return status(Response.Status.INTERNAL_SERVER_ERROR);
         }
 
-        Gson gson = new Gson();
-        return ok(gson.toJson(journalAdapter));
+        return ok();
     }
 
     @PUT
@@ -98,8 +100,15 @@ public class JournalResource extends AbstractResource {
             return status(Response.Status.FORBIDDEN);
         }
 
+        JournalService service = new JournalService();
+
         updateJournalAdapter.setId(journalId);
-        JournalAdapter journalAdapter = new JournalAdapter(new JournalService().update(updateJournalAdapter));
+        JournalAdapter journalAdapter;
+        try {
+            journalAdapter = new JournalAdapter(service.update(updateJournalAdapter));
+        } catch (IllegalArgumentException e) {
+            return status(Response.Status.CONFLICT);
+        }
 
         Gson gson = new Gson();
         return ok(gson.toJson(journalAdapter));
@@ -157,4 +166,65 @@ public class JournalResource extends AbstractResource {
         return ok(gson.toJson(journalAdapter));
     }
 
+    @GET
+    @Path("/{journalId}/subscribers")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getSubscribers(final @PathParam("journalId") String journalId) {
+        if (!userUtil.isCurrentUserAdmin()) {
+            return status(Response.Status.FORBIDDEN);
+        }
+
+        JournalService service = new JournalService();
+        Journal journal = service.get(journalId);
+        JournalAdapter journalAdapter = new JournalAdapter(journal);
+
+        Set<AccountAdapter> subscriberSet = journal.getSubscribers().stream().map(AccountAdapter::new).collect(Collectors.toSet());
+        journalAdapter.setSubscribers(subscriberSet);
+
+        Gson gson = new Gson();
+        return ok(gson.toJson(journalAdapter));
+    }
+
+    @PUT
+    @Path("/{journalId}/subscribers")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response subscribeJournal(final @PathParam("journalId") String journalId) {
+        if (userUtil.isCurrentUserAdmin()) {
+            return status(Response.Status.FORBIDDEN);
+        }
+
+        JournalService service = new JournalService();
+        Journal journal = service.get(journalId);
+
+        new SubscriptionService().subscribe(userUtil.getCurrentAccount(), journal);
+
+        return ok();
+    }
+
+    @DELETE
+    @Path("/{journalId}/subscribers")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response unsubscribeJournal(final @PathParam("journalId") String journalId) {
+        if (userUtil.isCurrentUserAdmin()) {
+            return status(Response.Status.FORBIDDEN);
+        }
+
+        JournalService service = new JournalService();
+        Journal journal = service.get(journalId);
+
+        new SubscriptionService().unsubscribe(userUtil.getCurrentAccount(), journal);
+
+        return ok();
+    }
+
+    private boolean checkHasSubscriber(Journal journal, Account account) {
+        final boolean[] hasAccount = {false};
+        journal.getSubscribers().forEach((subscriber) -> {
+            if (subscriber.getId().equalsIgnoreCase(account.getId())) {
+                hasAccount[0] = true;
+            }
+        });
+        return hasAccount[0];
+    }
 }

@@ -44,6 +44,8 @@
                 }, {
                     name: 'journals'
                 }, {
+                    name: 'upload'
+                }, {
                     name: 'logout'
                 }
             ];

@@ -2731,3 +2731,623 @@
 2016-01-31 01:18:13,408 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
 2016-01-31 01:18:13,412 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@7f2cfe3f
 2016-01-31 01:18:14,283 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 09:54:43,298 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 09:54:43,303 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 09:54:43,304 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 09:54:43,537 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 09:54:43,568 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 09:54:43,644 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 09:54:43,647 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 09:54:43,653 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 09:54:43,654 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 09:54:43,654 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 09:54:43,657 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 09:54:43,750 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 09:54:43,981 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 09:54:43,984 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@7f2cfe3f
+2016-01-31 09:54:44,562 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:35:27,008 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:35:27,026 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:35:27,029 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:35:28,053 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:35:28,202 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:35:28,859 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:35:28,866 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:35:28,909 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:35:28,909 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:35:28,910 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:35:28,925 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:35:29,511 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:35:30,033 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:35:30,041 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1500b2f3
+2016-01-31 11:35:30,630 [main][INFO ][][connections] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:35:30,640 [main][ERROR][][HibernateUtil] - Initial SessionFactory creation failed.
+org.hibernate.MappingException: Could not determine type for: java.util.Set, at table: account, for columns: [org.hibernate.mapping.Column(subscriptions)]
+	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:396) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:369) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.mapping.Property.isValid(Property.java:225) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:529) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:265) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.boot.internal.MetadataImpl.validate(MetadataImpl.java:329) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:443) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.boot.internal.MetadataImpl.buildSessionFactory(MetadataImpl.java:170) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at com.semjournals.data.util.HibernateUtil.<clinit>(HibernateUtil.java:26) ~[classes/:na]
+	at com.semjournals.data.dao.GenericDAO.<init>(GenericDAO.java:21) [classes/:na]
+	at com.semjournals.data.dao.JournalDAO.<init>(JournalDAO.java:9) [classes/:na]
+	at com.semjournals.data.dao.SubscriptionDAOTest.testCreate(SubscriptionDAOTest.java:18) [test-classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74) [junit-rt.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144) [idea_rt.jar:na]
+2016-01-31 11:40:02,120 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:40:02,136 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:40:02,139 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:40:02,748 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:40:02,890 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:40:03,320 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:40:03,325 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:40:03,353 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:40:03,354 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:40:03,354 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:40:03,361 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:40:03,742 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:40:04,209 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:40:04,217 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1500b2f3
+2016-01-31 11:40:04,982 [main][INFO ][][connections] - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:40:04,988 [main][ERROR][][HibernateUtil] - Initial SessionFactory creation failed.
+org.hibernate.MappingException: Could not determine type for: java.util.Set, at table: account, for columns: [org.hibernate.mapping.Column(subscriptions)]
+	at org.hibernate.mapping.SimpleValue.getType(SimpleValue.java:396) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.mapping.SimpleValue.isValid(SimpleValue.java:369) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.mapping.Property.isValid(Property.java:225) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:529) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:265) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.boot.internal.MetadataImpl.validate(MetadataImpl.java:329) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:443) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at org.hibernate.boot.internal.MetadataImpl.buildSessionFactory(MetadataImpl.java:170) ~[hibernate-core-5.0.6.Final.jar:5.0.6.Final]
+	at com.semjournals.data.util.HibernateUtil.<clinit>(HibernateUtil.java:26) ~[classes/:na]
+	at com.semjournals.data.dao.GenericDAO.<init>(GenericDAO.java:21) [classes/:na]
+	at com.semjournals.data.dao.JournalDAO.<init>(JournalDAO.java:9) [classes/:na]
+	at com.semjournals.data.dao.SubscriptionDAOTest.testCreate(SubscriptionDAOTest.java:18) [test-classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit-4.12.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78) [junit-4.12.jar:4.12]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:234) [junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:74) [junit-rt.jar:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[na:1.8.0_60]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:144) [idea_rt.jar:na]
+2016-01-31 11:41:37,967 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:41:37,977 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:41:37,980 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:41:38,560 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:41:38,716 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:41:39,046 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:41:39,055 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:41:39,083 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:41:39,084 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:41:39,084 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:41:39,094 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:41:39,403 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:41:39,925 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:41:39,933 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1500b2f3
+2016-01-31 11:41:41,860 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:42:52,163 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:42:52,176 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:42:52,181 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:42:53,263 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:42:53,452 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:42:53,884 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:42:53,888 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:42:53,912 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:42:53,913 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:42:53,914 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:42:53,921 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:42:54,231 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:42:54,788 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:42:54,796 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1500b2f3
+2016-01-31 11:42:56,163 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:43:07,922 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:43:07,945 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:43:07,949 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:43:08,682 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:43:08,798 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:43:09,236 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:43:09,241 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:43:09,263 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:43:09,263 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:43:09,264 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:43:09,293 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:43:09,649 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:43:10,199 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:43:10,206 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1500b2f3
+2016-01-31 11:43:11,990 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:45:06,870 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:45:06,883 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:45:06,888 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:45:07,559 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:45:07,715 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:45:08,114 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:45:08,118 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:45:08,129 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:45:08,130 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:45:08,131 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:45:08,135 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:45:08,614 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:45:09,279 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:45:09,289 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@47caedad
+2016-01-31 11:45:10,813 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:47:17,777 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:47:17,787 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:47:17,793 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:47:18,670 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:47:18,867 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:47:19,431 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:47:19,439 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:47:19,458 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:47:19,459 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:47:19,460 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:47:19,475 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:47:19,857 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:47:20,406 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:47:20,429 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1500b2f3
+2016-01-31 11:47:21,791 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:48:45,158 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:48:45,172 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:48:45,175 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:48:45,958 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:48:46,125 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:48:46,457 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:48:46,462 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:48:46,477 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:48:46,478 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:48:46,478 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:48:46,488 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:48:46,890 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:48:47,437 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:48:47,444 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1500b2f3
+2016-01-31 11:48:48,657 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:49:07,553 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:49:07,565 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:49:07,574 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:49:08,254 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:49:08,429 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:49:08,961 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:49:08,966 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:49:08,978 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:49:08,979 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:49:08,979 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:49:08,985 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:49:09,503 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:49:10,068 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:49:10,075 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1500b2f3
+2016-01-31 11:49:11,233 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:49:35,103 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:49:35,123 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:49:35,134 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:49:35,797 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:49:35,962 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:49:36,415 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:49:36,420 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:49:36,445 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:49:36,446 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:49:36,446 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:49:36,452 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:49:36,790 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:49:37,411 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:49:37,422 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1500b2f3
+2016-01-31 11:49:38,890 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:50:00,248 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:50:00,257 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:50:00,259 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:50:00,998 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:50:01,114 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:50:01,509 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:50:01,532 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:50:01,546 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:50:01,551 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:50:01,552 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:50:01,557 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:50:01,890 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:50:02,533 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:50:02,540 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1500b2f3
+2016-01-31 11:50:03,838 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:50:26,514 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:50:26,525 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:50:26,528 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:50:27,051 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:50:27,204 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:50:27,549 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:50:27,554 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:50:27,567 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:50:27,568 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:50:27,569 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:50:27,574 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:50:27,979 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:50:28,539 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:50:28,543 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6933b6c6
+2016-01-31 11:50:30,107 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:51:35,630 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:51:35,639 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:51:35,642 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:51:36,112 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:51:36,276 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:51:36,573 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:51:36,596 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:51:36,613 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:51:36,628 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:51:36,628 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:51:36,635 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:51:36,887 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:51:37,315 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:51:37,318 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6933b6c6
+2016-01-31 11:51:39,205 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:51:55,946 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:51:55,974 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:51:55,980 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:51:56,897 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:51:57,139 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:51:57,693 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:51:57,711 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:51:57,746 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:51:57,747 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:51:57,748 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:51:57,770 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:51:58,180 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:51:59,325 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:51:59,336 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@51b01960
+2016-01-31 11:52:03,352 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:53:37,409 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:53:37,425 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:53:37,428 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:53:38,015 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:53:38,120 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:53:38,327 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:53:38,333 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:53:38,342 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:53:38,343 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:53:38,343 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:53:38,351 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:53:38,527 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:53:39,131 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:53:39,138 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@7bd69e82
+2016-01-31 11:53:41,379 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:53:51,278 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:53:51,303 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:53:51,311 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:53:51,947 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:53:52,040 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:53:52,253 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:53:52,257 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:53:52,267 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:53:52,267 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:53:52,267 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:53:52,272 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:53:52,433 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:53:52,805 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:53:52,813 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@7bd69e82
+2016-01-31 11:53:54,083 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:58:08,377 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:58:08,392 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:58:08,395 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:58:09,593 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:58:09,736 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:58:10,072 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:58:10,078 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:58:10,094 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:58:10,095 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:58:10,096 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:58:10,105 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:58:10,537 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:58:11,161 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:58:11,170 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@74d7184a
+2016-01-31 11:58:13,801 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:58:28,354 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:58:28,368 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:58:28,371 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:58:29,253 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:58:29,479 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:58:30,329 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:58:30,335 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:58:30,360 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:58:30,361 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:58:30,361 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:58:30,370 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:58:31,060 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:58:31,586 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:58:31,595 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@74d7184a
+2016-01-31 11:58:33,093 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:58:41,226 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:58:41,252 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:58:41,255 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:58:42,231 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:58:42,492 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:58:43,171 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:58:43,177 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:58:43,233 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:58:43,235 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:58:43,236 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:58:43,251 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:58:43,623 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:58:44,180 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:58:44,188 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@6b85300e
+2016-01-31 11:58:45,639 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:59:23,431 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:59:23,492 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:59:23,496 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:59:24,506 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:59:24,690 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:59:25,260 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:59:25,282 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:59:25,299 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:59:25,300 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:59:25,301 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:59:25,308 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:59:25,567 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:59:25,966 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:59:25,975 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@74d7184a
+2016-01-31 11:59:27,406 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 11:59:35,213 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 11:59:35,263 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 11:59:35,303 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 11:59:36,328 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 11:59:36,534 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 11:59:37,011 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 11:59:37,017 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 11:59:37,049 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 11:59:37,049 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 11:59:37,050 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 11:59:37,074 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 11:59:37,383 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 11:59:37,818 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 11:59:37,827 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@74d7184a
+2016-01-31 11:59:38,988 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 12:00:00,060 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 12:00:00,085 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 12:00:00,096 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 12:00:01,218 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 12:00:01,361 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 12:00:01,902 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 12:00:01,912 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 12:00:01,931 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 12:00:01,932 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 12:00:01,933 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 12:00:01,943 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 12:00:02,232 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 12:00:02,607 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 12:00:02,611 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1bdaa23d
+2016-01-31 12:00:03,896 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 12:00:12,849 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 12:00:12,861 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 12:00:12,864 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 12:00:13,662 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 12:00:13,907 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 12:00:14,619 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 12:00:14,636 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 12:00:14,664 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 12:00:14,670 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 12:00:14,670 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 12:00:14,678 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 12:00:15,182 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 12:00:15,711 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 12:00:15,717 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@79f227a9
+2016-01-31 12:00:17,611 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 12:01:55,312 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 12:01:55,331 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 12:01:55,335 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 12:01:56,459 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 12:01:56,684 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 12:01:57,375 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 12:01:57,405 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 12:01:57,428 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 12:01:57,430 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 12:01:57,430 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 12:01:57,438 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 12:01:57,807 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 12:01:58,218 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 12:01:58,223 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@79f227a9
+2016-01-31 12:01:59,449 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 12:02:06,599 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 12:02:06,621 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 12:02:06,625 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 12:02:07,528 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 12:02:07,714 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 12:02:08,296 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 12:02:08,308 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 12:02:08,324 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 12:02:08,326 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 12:02:08,326 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 12:02:08,337 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 12:02:08,679 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 12:02:09,229 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 12:02:09,233 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1bdaa23d
+2016-01-31 12:02:10,509 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 12:02:22,702 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 12:02:22,710 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 12:02:22,713 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 12:02:23,322 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 12:02:23,488 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 12:02:23,810 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 12:02:23,820 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 12:02:23,852 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 12:02:23,852 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 12:02:23,853 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 12:02:23,860 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 12:02:24,169 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 12:02:24,811 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 12:02:24,816 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5340477f
+2016-01-31 12:02:26,007 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 12:05:08,829 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 12:05:08,836 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 12:05:08,842 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 12:05:09,479 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 12:05:09,636 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 12:05:10,341 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 12:05:10,347 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 12:05:10,460 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 12:05:10,462 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 12:05:10,463 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 12:05:10,470 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 12:05:10,964 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 12:05:11,594 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 12:05:11,599 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5340477f
+2016-01-31 12:05:13,133 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 12:06:22,758 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 12:06:22,763 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 12:06:22,765 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 12:06:23,299 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 12:06:23,452 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 12:06:23,898 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 12:06:23,925 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 12:06:23,949 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 12:06:23,950 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 12:06:23,950 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 12:06:23,969 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 12:06:24,253 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 12:06:24,822 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 12:06:24,831 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5340477f
+2016-01-31 12:06:26,416 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 12:07:03,316 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 12:07:03,330 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 12:07:03,334 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 12:07:03,887 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 12:07:04,120 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 12:07:04,580 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 12:07:04,585 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 12:07:04,614 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 12:07:04,615 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 12:07:04,616 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 12:07:04,624 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 12:07:05,167 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 12:07:05,916 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 12:07:05,922 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5340477f
+2016-01-31 12:07:07,341 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 13:00:30,827 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 13:00:30,834 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 13:00:30,836 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 13:00:31,214 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 13:00:31,310 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 13:00:31,667 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 13:00:31,670 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 13:00:31,680 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 13:00:31,681 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 13:00:31,681 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 13:00:31,686 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 13:00:31,853 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 13:00:32,287 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 13:00:32,311 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5340477f
+2016-01-31 13:00:33,294 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 13:00:53,712 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 13:00:53,727 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 13:00:53,732 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 13:00:54,371 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 13:00:54,552 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 13:00:54,946 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 13:00:54,985 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 13:00:55,006 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 13:00:55,007 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 13:00:55,008 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 13:00:55,021 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 13:00:55,394 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 13:00:56,081 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 13:00:56,088 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@5340477f
+2016-01-31 13:00:57,242 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 13:01:38,739 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 13:01:38,753 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 13:01:38,756 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 13:01:39,358 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 13:01:39,619 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 13:01:40,005 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 13:01:40,010 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 13:01:40,023 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 13:01:40,024 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 13:01:40,024 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 13:01:40,043 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 13:01:40,327 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 13:01:40,992 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 13:01:40,997 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@3aa078fd
+2016-01-31 13:01:41,995 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 13:02:04,326 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 13:02:04,336 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 13:02:04,340 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 13:02:04,995 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 13:02:05,352 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 13:02:05,781 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 13:02:05,786 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 13:02:05,806 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 13:02:05,806 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 13:02:05,806 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 13:02:05,814 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 13:02:06,128 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 13:02:06,642 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 13:02:06,647 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@3aa078fd
+2016-01-31 13:02:07,521 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 13:02:17,656 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 13:02:17,666 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 13:02:17,670 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 13:02:18,320 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 13:02:18,584 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 13:02:19,020 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 13:02:19,025 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 13:02:19,053 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 13:02:19,054 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 13:02:19,065 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 13:02:19,072 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 13:02:19,433 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 13:02:19,943 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 13:02:19,950 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@69504ae9
+2016-01-31 13:02:20,960 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 13:03:04,224 [main][INFO ][][Version] - HHH000412: Hibernate Core {5.0.6.Final}
+2016-01-31 13:03:04,233 [main][INFO ][][Environment] - HHH000206: hibernate.properties not found
+2016-01-31 13:03:04,236 [main][INFO ][][Environment] - HHH000021: Bytecode provider name : javassist
+2016-01-31 13:03:04,794 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 13:03:04,935 [main][INFO ][][Version] - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2016-01-31 13:03:05,336 [main][WARN ][][ConnectionProviderInitiator] - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2016-01-31 13:03:05,342 [main][WARN ][][connections] - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2016-01-31 13:03:05,354 [main][INFO ][][connections] - HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/semjournals]
+2016-01-31 13:03:05,354 [main][INFO ][][connections] - HHH10001001: Connection properties: {user=semjournals, password=****}
+2016-01-31 13:03:05,355 [main][INFO ][][connections] - HHH10001003: Autocommit mode: false
+2016-01-31 13:03:05,375 [main][INFO ][][DriverManagerConnectionProviderImpl] - HHH000115: Hibernate connection pool size: 20 (min=1)
+2016-01-31 13:03:05,680 [main][INFO ][][Dialect] - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL82Dialect
+2016-01-31 13:03:06,234 [main][INFO ][][LobCreatorBuilderImpl] - HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2016-01-31 13:03:06,243 [main][INFO ][][BasicTypeRegistry] - HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@69504ae9
+2016-01-31 13:03:07,407 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded

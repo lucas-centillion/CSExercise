@@ -59,7 +59,17 @@
         }
 
         function toggleSubscription(journal) {
-
+            if (journal.subscribed) {
+                JournalService.Unsubscribe(journal.id)
+                    .then(function () {
+                        loadAllJournals();
+                    });
+            } else {
+                JournalService.Subscribe(journal.id)
+                    .then(function () {
+                        loadAllJournals();
+                    });
+            }
         }
 
         function getRandomIconId() {

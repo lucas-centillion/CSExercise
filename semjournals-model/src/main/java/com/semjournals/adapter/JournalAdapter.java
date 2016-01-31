@@ -2,11 +2,15 @@ package com.semjournals.adapter;
 
 import com.semjournals.model.Journal;
 
+import java.util.Set;
+
 public class JournalAdapter {
     private String id;
     private AccountAdapter creator;
     private String name;
     private boolean active;
+    private boolean subscribed;
+    private Set<AccountAdapter> subscribers;
 
     public JournalAdapter() {}
 
@@ -68,5 +72,21 @@ public class JournalAdapter {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public boolean isSubscribed() {
+        return subscribed;
+    }
+
+    public void setSubscribed(boolean subscribed) {
+        this.subscribed = subscribed;
+    }
+
+    public Set<AccountAdapter> getSubscribers() {
+        return subscribers;
+    }
+
+    public void setSubscribers(Set<AccountAdapter> subscribers) {
+        this.subscribers = subscribers;
     }
 }

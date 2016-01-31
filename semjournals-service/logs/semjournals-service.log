@@ -137,3 +137,11 @@
 2016-01-31 00:53:06,568 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
 2016-01-31 01:18:16,122 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
 2016-01-31 01:18:17,510 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 09:54:46,044 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 09:54:47,009 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 12:16:15,524 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 12:16:18,075 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 12:16:54,340 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 12:16:56,755 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded
+2016-01-31 12:17:49,539 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - loading config
+2016-01-31 12:17:52,116 [main][DEBUG][][HibernateUtil] - HibernateUtil.static - config fully loaded

@@ -10,3 +10,6 @@ INSERT INTO journal VALUES ('a48c772c-34cd-4618-875d-5bdcdc871349', '6270dddf-99
 INSERT INTO journal VALUES ('d405d55d-8b8a-4c8c-8d1c-b65d909a968a', '6270dddf-9945-41eb-baea-3892eca8c063', 'Plumbing 101', false);
 INSERT INTO journal VALUES ('e28b4175-60c4-41af-9341-a26e5310e8a2', 'fa2f9433-1240-4389-9079-94cab6d2b99e', 'Hyrule Historia', true);
 INSERT INTO journal VALUES ('c750058d-37db-4581-b911-6f9bc3bff0f1', 'fa2f9433-1240-4389-9079-94cab6d2b99e', 'Sword fight for dummies', false);
+
+INSERT INTO subscriptions VALUES ('88e9608e-2217-48e5-9dd3-bd830b04e842', 'e28b4175-60c4-41af-9341-a26e5310e8a2');
+INSERT INTO subscriptions VALUES ('88e9608e-2217-48e5-9dd3-bd830b04e842', 'c750058d-37db-4581-b911-6f9bc3bff0f1');

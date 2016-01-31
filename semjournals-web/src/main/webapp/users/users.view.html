@@ -3,7 +3,7 @@
 
     <md-list>
         <md-card ng-repeat="user in vm.allUsers | orderBy:'fullname'" >
-            <md-list-item class="list-row zebra-background" layout="row" layout-align="space-between center">
+            <md-list-item class="list-row" layout="row" layout-align="space-between center">
                 <md-content>
                     <md-icon md-svg-icon="svg-{{user.iconId}}" class="avatar"></md-icon>
                     <h2>{{user.fullname}}</h2>

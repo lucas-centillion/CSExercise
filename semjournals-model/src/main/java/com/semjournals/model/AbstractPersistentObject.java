@@ -4,9 +4,10 @@ import com.semjournals.util.IdGenerator;
 
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 @MappedSuperclass
-public abstract class AbstractPersistentObject {
+public abstract class AbstractPersistentObject implements Serializable {
     @Id
     private String id = IdGenerator.createId();
 

@@ -20,4 +20,5 @@ public class JournalDAO extends GenericDAO<Journal> {
         checkNotNull(journal.getName());
         checkNotNull(journal.getCreator());
     }
+
 }

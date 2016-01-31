@@ -2,6 +2,8 @@ package com.semjournals.adapter;
 
 import com.semjournals.model.Account;
 
+import java.util.Set;
+
 public class AccountAdapter {
     private String id;
     private RoleAdapter role;
@@ -9,6 +11,7 @@ public class AccountAdapter {
     private String email;
     private String password;
     private boolean active;
+    private Set<JournalAdapter> subscriptions;
 
     public AccountAdapter() {}
 
@@ -88,5 +91,13 @@ public class AccountAdapter {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Set<JournalAdapter> getSubscriptions() {
+        return subscriptions;
+    }
+
+    public void setSubscriptions(Set<JournalAdapter> subscriptions) {
+        this.subscriptions = subscriptions;
     }
 }

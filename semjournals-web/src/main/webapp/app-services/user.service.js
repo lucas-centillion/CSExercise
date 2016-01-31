@@ -20,6 +20,7 @@
         service.DeactivateAccount = DeactivateAccount;
         service.AddAdminRole = AddAdminRole;
         service.RemoveAdminRole = RemoveAdminRole;
+        service.GetSubscriptions = GetSubscriptions;
 
         return service;
 
@@ -61,6 +62,10 @@
 
         function RemoveAdminRole(id) {
             return $http.delete(base + id + '/admin').then(handleSuccess, handleError('Error deleting user'));
+        }
+
+        function GetSubscriptions(id) {
+            return $http.get(base + id + '/subscriptions').then(handleSuccess, handleError('Error getting users subscriptions'));
         }
 
         // private functions

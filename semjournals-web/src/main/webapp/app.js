@@ -21,6 +21,18 @@
                 controllerAs: 'vm'
             })
 
+            .when('/upload', {
+                controller: 'NewJournalController',
+                templateUrl: 'journals/newJournal.view.html',
+                controllerAs: 'vm'
+            })
+
+            .when('/subscriptions', {
+                controller: 'SubscriptionsController',
+                templateUrl: 'subscriptions/subscriptions.view.html',
+                controllerAs: 'vm'
+            })
+
             .when('/login', {
                 controller: 'LoginController',
                 templateUrl: 'login/login.view.html',

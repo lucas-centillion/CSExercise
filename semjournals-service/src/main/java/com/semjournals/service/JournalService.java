@@ -9,6 +9,9 @@ import com.semjournals.model.Account;
 import com.semjournals.model.Journal;
 import com.semjournals.model.Role;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
@@ -28,12 +31,19 @@ public class JournalService {
     public Journal get(String journalId) {
         return new JournalDAO().get(journalId);
     }
+    public Journal getByName(String name) {
+        return new JournalDAO().get("name", name);
+    }
 
-    public Journal create(JournalAdapter journalAdapter) throws UnsupportedEncodingException {
+    public Journal create(JournalAdapter journalAdapter) throws IllegalArgumentException {
         checkNotNull(journalAdapter);
         checkNotNull(journalAdapter.getCreator());
         checkNotNull(journalAdapter.getCreator().getId());
         checkNotNull(journalAdapter.getName());
+
+        if (getByName(journalAdapter.getName()) != null) {
+            throw new IllegalArgumentException("Journal name '" + journalAdapter.getName() + "' already exists");
+        }
 
         Journal createJournal = journalAdapter.fromAdapter(true);
 
@@ -59,8 +69,8 @@ public class JournalService {
             if (hasConflict) {
                 throw new IllegalArgumentException("Journal name '" + journalAdapter.getName() + "' already exists");
             }
-            // TODO: Change file name
-//            updateFileName(currentJournal.getName(), journalAdapter.getName());
+
+            updateFileName(currentJournal.getName(), journalAdapter.getName());
         }
 
         Journal updateJournal = journalAdapter.fromAdapter();
@@ -85,6 +95,17 @@ public class JournalService {
         checkNotNull(journal.getId());
 
         new JournalDAO().delete(journal);
+        deleteFileName(journal.getName());
+    }
+
+    private void updateFileName(String currentName, String newName) {
+        File file = new File("journals/" + currentName);
+        file.renameTo(new File("journals/" + newName));
+    }
+
+    private void deleteFileName(String name) {
+        new File("journals/" + name).delete();
+
     }
 
 }

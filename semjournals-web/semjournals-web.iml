@@ -29,5 +29,11 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Angular" level="project" />
     <orderEntry type="library" name="angular-material" level="project" />
+    <orderEntry type="library" name="jquery-2.0.3" level="project" />
+    <orderEntry type="library" name="angular-aria" level="project" />
+    <orderEntry type="library" name="angular" level="project" />
+    <orderEntry type="library" name="angular-cookies" level="project" />
+    <orderEntry type="library" name="angular-route" level="project" />
+    <orderEntry type="library" name="angular-animate" level="project" />
   </component>
 </module>

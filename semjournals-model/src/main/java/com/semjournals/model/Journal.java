@@ -1,6 +1,8 @@
 package com.semjournals.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name ="journal")
@@ -15,6 +17,11 @@ public class Journal extends AbstractPersistentObject {
 
     @Column(nullable = false)
     private boolean active;
+
+    @ManyToMany
+    @JoinTable(name = "subscriptions", joinColumns = { @JoinColumn(name =
+            "journal_id") }, inverseJoinColumns = { @JoinColumn(name = "account_id") })
+    private Set<Account> subscribers = new HashSet<>(0);
 
     public Journal() {}
 
@@ -46,5 +53,13 @@ public class Journal extends AbstractPersistentObject {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Set<Account> getSubscribers() {
+        return subscribers;
+    }
+
+    public void setSubscribers(Set<Account> subscribers) {
+        this.subscribers = subscribers;
     }
 }

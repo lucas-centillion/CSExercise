@@ -2,11 +2,14 @@ package com.semjournals.rest.resources;
 
 import com.google.gson.Gson;
 import com.semjournals.adapter.AccountAdapter;
+import com.semjournals.adapter.JournalAdapter;
 import com.semjournals.data.dao.AccountDAO;
 import com.semjournals.data.dao.RoleDAO;
 import com.semjournals.model.Account;
+import com.semjournals.model.Journal;
 import com.semjournals.model.Role;
 import com.semjournals.service.AccountService;
+import com.semjournals.service.JournalService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 
@@ -16,6 +19,8 @@ import javax.ws.rs.core.Response;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Path("/accounts/")
 public class AccountsResource extends AbstractResource {
@@ -189,6 +194,25 @@ public class AccountsResource extends AbstractResource {
 
         account = service.update(new AccountAdapter(account));
         AccountAdapter accountAdapter = new AccountAdapter(account);
+
+        Gson gson = new Gson();
+        return ok(gson.toJson(accountAdapter));
+    }
+
+    @GET
+    @Path("/{accountId}/subscriptions")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getSubscriptions(final @PathParam("accountId") String accountId) {
+        if (!userUtil.isCurrentUserAdmin() && !accountId.equals(userUtil.getCurrentAccount().getId())) {
+            return status(Response.Status.FORBIDDEN);
+        }
+
+        AccountService service = new AccountService();
+        Account account = service.get(accountId);
+        AccountAdapter accountAdapter = new AccountAdapter(account);
+
+        Set<JournalAdapter> subscriptionsSet = account.getSubscriptions().stream().map(JournalAdapter::new).collect(Collectors.toSet());
+        accountAdapter.setSubscriptions(subscriptionsSet);
 
         Gson gson = new Gson();
         return ok(gson.toJson(accountAdapter));

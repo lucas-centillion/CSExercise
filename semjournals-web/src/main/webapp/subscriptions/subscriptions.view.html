@@ -1,0 +1,24 @@
+<md-content class="md-has-header">
+    <md-subheader>My Subscriptions</md-subheader>
+
+    <md-list>
+        <md-card ng-repeat="journal in vm.subscribedJournals | orderBy:'name'" >
+            <md-list-item class="list-row" layout="row" layout-align="space-between center">
+                <md-content>
+                    <md-icon md-svg-icon="svg-{{journal.iconId}}" class="avatar"></md-icon>
+                    <h2>{{journal.name}}</h2>
+                </md-content>
+                <md-list>
+                    <md-list-item layout="column" layout-align="center start">
+                        <md-content>
+                            <md-button aria-label="unsubscribe" ng-click="vm.Unsubscribe(journal)">
+                                <md-icon md-svg-icon="share"></md-icon>
+                                <span>Unsubscribe</span>
+                            </md-button>
+                        </md-content>
+                    </md-list-item>
+                </md-list>
+            </md-list-item>
+        </md-card>
+    </md-list>
+</md-content>

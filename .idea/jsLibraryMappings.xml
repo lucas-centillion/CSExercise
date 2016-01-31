@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{Angular, angular-material}" />
+    <file url="PROJECT" libraries="{angular-animate, angular-aria, angular-cookies, angular-material, angular-route, jquery-2.0.3}" />
   </component>
 </project>

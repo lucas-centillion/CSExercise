@@ -5,8 +5,8 @@
         .module('semjournals')
         .controller('UsersController', UsersController);
 
-    UsersController.$inject = ['$rootScope', 'UserService', 'SidebarService'];
-    function UsersController($rootScope, UserService, SidebarService) {
+    UsersController.$inject = ['$rootScope', '$location', 'UserService', 'SidebarService'];
+    function UsersController($rootScope, $location, UserService, SidebarService) {
         var vm = this;
 
         vm.user = $rootScope.loggedUser;
@@ -18,6 +18,10 @@
         initController();
 
         function initController() {
+            if (vm.user.role.name == 'user') {
+                $location.path('/login');
+            }
+
             SidebarService.LoadAdminActions();
             loadAllUsers();
         }

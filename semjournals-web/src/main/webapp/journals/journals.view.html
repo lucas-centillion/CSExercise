@@ -3,7 +3,7 @@
 
     <md-list>
         <md-card ng-repeat="journal in vm.allJournals | orderBy:'name'" >
-            <md-list-item class="list-row zebra-background" layout="row" layout-align="space-between center">
+            <md-list-item class="list-row" layout="row" layout-align="space-between center">
                 <md-content>
                     <md-icon md-svg-icon="svg-{{journal.iconId}}" class="avatar"></md-icon>
                     <h2>{{journal.name}}</h2>
@@ -28,8 +28,8 @@
                         <md-content>
                             <md-button aria-label="toggle subscription" ng-click="vm.toggleSubscription(journal)">
                                 <md-icon md-svg-icon="share"></md-icon>
-                                <span ng-if="!journal.active">Subscribe</span>
-                                <span ng-if="journal.active">Unsubscribe</span>
+                                <span ng-if="!journal.subscribed">Subscribe</span>
+                                <span ng-if="journal.subscribed">Unsubscribe</span>
                             </md-button>
                         </md-content>
                     </md-list-item>
